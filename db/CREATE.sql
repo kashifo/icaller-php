@@ -32,6 +32,21 @@ CREATE TABLE `icaller`.`interests` (
 
 SELECT userID FROM `interests` WHERE JavaScript AND Python IS NOT NULL;
 
+INSERT INTO `interests`(`userID`) VALUES ( 6 );
+
+//UPDATE `interests` SET(JavaScript, Android) = (1, 1) WHERE userID = 1;
+UPDATE interests SET `JavaScript`=1, `Android`=1 WHERE userID = 1;
+
+
+ $sql = "UPDATE `product_list` SET 
+       `product_name` = '$product_name', 
+       `product_category` = '$product_category', 
+       `product_price` = '$product_price', 
+       `product_description` = '$product_description', 
+       `product_size_category` = '$size_category' 
+  where clause..... (if required) ";
+
+
 CREATE TABLE `icaller`.`friends` (
   `id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `userOne` int(10) NOT NULL,

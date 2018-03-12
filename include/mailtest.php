@@ -7,27 +7,36 @@ use PHPMailer\PHPMailer\Exception;
 require 'phpmailer/Exception.php';
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
-                
-$mail = new PHPMailer;
-$mail->isSMTP(); 
-$mail->SMTPDebug = 2; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
-$mail->Host = gethostbyname('smtp.gmail.com'); // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
-$mail->Port = 587; // TLS only
-$mail->SMTPSecure = 'tls'; // ssl is depracated
-$mail->SMTPAuth = true;
-$mail->Username = 'koderkashif@gmail.com';
-$mail->Password = '73849256';
-$mail->setFrom('koderkashif@gmail.com', 'Koder Kashif');
-$mail->addAddress('pmkashif@gmail.com', 'Kashif Anwaar');
-$mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->msgHTML("test body"); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
-$mail->AltBody = 'HTML messaging not supported';
-// $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
 
-if(!$mail->send()){
+/*koderkashif@gmail.com 73849256
+pmkashif@gmail.com
+ 
+ * $mail->Username = "koderkashif@gmail.com";
+$mail->Password = "73849256";
+$mail->SetFrom("koderkashif@gmail.com");
+$mail->Subject = "Test";
+$mail->Body = "hello";
+$mail->AddAddress("pmkashif@gmail.com");
+
+ */
+        
+$mail = new PHPMailer(); // create a new object
+$mail->IsSMTP(); // enable SMTP
+$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+$mail->SMTPAuth = true; // authentication enabled
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 465; // or 587
+$mail->IsHTML(true);
+$mail->Username = "koderkashif@gmail.com";
+$mail->Password = "73849256";
+$mail->SetFrom("koderkashif@gmail.com");
+$mail->Subject = "Test";
+$mail->Body = "hello";
+$mail->AddAddress("pmkashif@gmail.com");
+
+ if(!$mail->Send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
-}else{
-    echo "Message sent!";
-}
-	
-
+ } else {
+    echo "Message has been sent";
+ }
