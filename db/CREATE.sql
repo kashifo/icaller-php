@@ -34,17 +34,7 @@ SELECT userID FROM `interests` WHERE JavaScript AND Python IS NOT NULL;
 
 INSERT INTO `interests`(`userID`) VALUES ( 6 );
 
-//UPDATE `interests` SET(JavaScript, Android) = (1, 1) WHERE userID = 1;
 UPDATE interests SET `JavaScript`=1, `Android`=1 WHERE userID = 1;
-
-
- $sql = "UPDATE `product_list` SET 
-       `product_name` = '$product_name', 
-       `product_category` = '$product_category', 
-       `product_price` = '$product_price', 
-       `product_description` = '$product_description', 
-       `product_size_category` = '$size_category' 
-  where clause..... (if required) ";
 
 
 CREATE TABLE `icaller`.`friends` (
@@ -61,6 +51,9 @@ CREATE TABLE `icaller`.`friends` (
 
 //SEND FRND REQ
 INSERT INTO `friends`(`userOne`, `userTwo`, `status`, `actionUser`) VALUES ( '1', '2', '0', '1' );
+
+SELECT * FROM friends WHERE userOne=2 AND userTwo=3;
+
 
 //GET FRND REQS
 SELECT actionUser FROM `friends` WHERE ( userOne = 2 OR userTwo = 2 ) AND status = 0 AND actionUser != 2;
