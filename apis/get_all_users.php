@@ -11,7 +11,7 @@ if (!empty ($result)) {
     // check for empty result
     if (mysqli_num_rows ($result) > 0) {
 
-        $user = mysqli_fetch_array ($result);
+        //$user = mysqli_fetch_array ($result);
         $count = mysqli_num_rows($result);
         // success
         $response["success"] = 1;

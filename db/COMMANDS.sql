@@ -30,13 +30,6 @@ CREATE TABLE `icaller`.`interests` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Interests Table';
 
-SELECT userID FROM `interests` WHERE JavaScript AND Python IS NOT NULL;
-
-INSERT INTO `interests`(`userID`) VALUES ( 6 );
-
-UPDATE interests SET `JavaScript`=1, `Android`=1 WHERE userID = 1;
-
-
 CREATE TABLE `icaller`.`friends` (
   `id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `userOne` int(10) NOT NULL,
@@ -48,6 +41,16 @@ CREATE TABLE `icaller`.`friends` (
   FOREIGN KEY (`userTwo`) REFERENCES users(`id`),
   FOREIGN KEY (`actionUser`) REFERENCES users(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Friend Status Table';
+
+
+INSERT INTO `interests`(`userID`) VALUES ( 6 );
+
+//update interests
+UPDATE interests SET `JavaScript`=1, `Android`=1 WHERE userID = 1;
+
+//SCAN USERS BASED ON INTERESTS
+SELECT * from users WHERE id IN ( SELECT userID FROM interests WHERE JavaScript OR Android IS NOT NULL );
+
 
 //SEND FRND REQ
 INSERT INTO `friends`(`userOne`, `userTwo`, `status`, `actionUser`) VALUES ( '1', '2', '0', '1' );
