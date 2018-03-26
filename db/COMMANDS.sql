@@ -13,7 +13,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Users Table';
 
 
-CREATE TABLE `icaller`.`interests` (
+CREATE TABLE `interests` (
   `id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `userID` int(10) NOT NULL,  
   `Islam` int DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `icaller`.`interests` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Interests Table';
 
-CREATE TABLE `icaller`.`friends` (
+CREATE TABLE `friends` (
   `id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `userOne` int(10) NOT NULL,
   `userTwo` int(10) NOT NULL,

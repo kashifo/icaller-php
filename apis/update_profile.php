@@ -10,6 +10,10 @@ if ( isset($_POST['userID']) ) {
     $country = $_POST['country'];
     $area = $_POST['area'];
     
+    $image = $_POST['image'];
+    $path = "uploads/$userID.jpg";
+    file_put_contents($path, base64_decode($image));
+    
     require_once '../include/DB_Connect.php';
     // connecting to database
     $db = new Db_Connect();

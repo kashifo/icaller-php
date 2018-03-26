@@ -44,7 +44,7 @@ if (isset ($_POST['interests'])) {
     } else {
         // no product found
         $response["success"] = 0;
-        $response["message"] = "No users found";
+        $response["message"] = "No user found for your interests";
 
         // echo no users JSON
         echo json_encode ($response);
@@ -52,7 +52,7 @@ if (isset ($_POST['interests'])) {
 } else {
     // no product found
     $response["success"] = 0;
-    $response["message"] = "No users found";
+    $response["message"] = "No user found for your interests";
 
     // echo no users JSON
     echo json_encode ($response);

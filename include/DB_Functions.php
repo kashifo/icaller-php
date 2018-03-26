@@ -43,6 +43,9 @@ class DB_Functions {
             $stmt->execute();
             $user = $stmt->get_result()->fetch_assoc();
             $stmt->close();
+            
+            $sql = "INSERT INTO interests(userID) VALUES($user[id]);";
+            $result2 = mysqli_query ($this->conn, $sql);
 
             return $user;
         } else {

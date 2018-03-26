@@ -15,42 +15,39 @@ if (isset ($_GET['userID'])) {
         // check for empty result
         if (mysqli_num_rows ($result) > 0) {
 
-            /*
-              
-              $response["success"] = 1;
-              $response["message"] = "$count friends found";
-              $response["friends"] = array ();
-             */
             $count = mysqli_num_rows ($result);
             $friendIDS = "";
-            $currentRecord = 0;
+            $currentRecord = 1;
 
             while ($row = mysqli_fetch_assoc ($result)) {
 
                 if ($userID != $row["userOne"]) {
-                    //array_push ($response["friends"], $row["userOne"]);
+                    
                     $friendIDS .= $row['userOne'];
+                    
                 } else if ($userID != $row["userTwo"]) {
-                    //array_push ($response["friends"], $row["userTwo"]);
+                    
                     $friendIDS .= $row["userTwo"];
+                    
                 }
 
-                if ($currentRecord < $count - 1) {
+                if ($currentRecord < $count ) {
                     $friendIDS .= ",";
                 }
+                
+                $currentRecord += 1;
             }
 
             //echo json_encode ($response);
             //get user data
             $sql = "SELECT * FROM users WHERE id IN ($friendIDS);";
             $result = mysqli_query ($conn, $sql);
-            echo $sql;
+            //echo $sql;
 
             if (!empty ($result)) {
                 // check for empty result
                 if (mysqli_num_rows ($result) > 0) {
 
-                    //$user = mysqli_fetch_array ($result);
                     $count = mysqli_num_rows ($result);
                     // success
                     $response["success"] = 1;
@@ -68,7 +65,7 @@ if (isset ($_GET['userID'])) {
             } else {
                 // no product found
                 $response["success"] = 0;
-                $response["message"] = "No product found";
+                $response["message"] = "No friends found";
 
                 // echo no users JSON
                 echo json_encode ($response);
@@ -76,7 +73,7 @@ if (isset ($_GET['userID'])) {
         } else {
             // no product found
             $response["success"] = 0;
-            $response["message"] = "No product found";
+            $response["message"] = "No friends found";
 
             // echo no users JSON
             echo json_encode ($response);

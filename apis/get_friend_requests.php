@@ -30,7 +30,7 @@ if (!empty ($result)) {
     } else {
         // no product found
         $response["success"] = 0;
-        $response["message"] = "No users found";
+        $response["message"] = "No friend requests";
 
         // echo no users JSON
         echo json_encode ($response);
@@ -38,7 +38,7 @@ if (!empty ($result)) {
 } else {
     // no product found
     $response["success"] = 0;
-    $response["message"] = "No users found";
+    $response["message"] = "No friend requests";
 
     // echo no users JSON
     echo json_encode ($response);
