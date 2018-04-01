@@ -1,0 +1,568 @@
+{
+	"info": {
+		"name": "iCaller local",
+		"_postman_id": "952ab562-1bb9-abfe-21fc-0a946be1dcb2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Kashif Anwaar",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "koderkashif@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "kashif",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/register.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"register.php"
+					]
+				},
+				"description": "http://localhost:8000/register.php?name=Kashif&email=pmkashif@gmail.com&password=kashif"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userID",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Koder Kashif",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1994-05-27",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "Bangalore",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/update_profile.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"update_profile.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pmkashif@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "73847610",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/login.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"login.php"
+					]
+				},
+				"description": "http://localhost:8000/login.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/apis/get_profile.php?userID=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"get_profile.php"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3",
+							"equals": true
+						}
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/apis/get_all_users.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"get_all_users.php"
+					]
+				},
+				"description": "http://localhost:8000/apis/get_all_users.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Interests",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userID",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "interests",
+							"value": "[\"Islam\",\"Java\",\"Android\"]",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/update_interests.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"update_interests.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Interests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/apis/get_interests.php?userID=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"get_interests.php"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3",
+							"equals": true
+						}
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Request Friend",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "senderID",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "receiverID",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/request_friend.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"request_friend.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "senderID",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "receiverID",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/accept_friend.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"accept_friend.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Friend Requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/apis/get_friend_requests.php?userID=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"get_friend_requests.php"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "2",
+							"equals": true
+						}
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "interests",
+							"value": "[\"Islam\",\"Java\",\"Android\"]",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/scan_users.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"scan_users.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Profiles",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "interests",
+							"value": "[\"Islam\",\"Java\",\"Android\"]",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/apis/scan_profiles.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"scan_profiles.php"
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Friends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/apis/get_friends.php?userID=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apis",
+						"get_friends.php"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3",
+							"equals": true
+						}
+					]
+				},
+				"description": "http://localhost:8000/update_profile.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Register Live",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Kashif Anwaar",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "koderkashif@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "kashif",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://wanted-apps.cf/icaller/apis/register.php",
+					"protocol": "http",
+					"host": [
+						"wanted-apps",
+						"cf"
+					],
+					"path": [
+						"icaller",
+						"apis",
+						"register.php"
+					]
+				},
+				"description": "http://localhost:8000/register.php?name=Kashif&email=pmkashif@gmail.com&password=kashif"
+			},
+			"response": []
+		}
+	]
+}

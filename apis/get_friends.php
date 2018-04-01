@@ -40,7 +40,7 @@ if (isset ($_GET['userID'])) {
 
             //echo json_encode ($response);
             //get user data
-            $sql = "SELECT * FROM users WHERE id IN ($friendIDS);";
+            $sql = "SELECT  id, name, gender, dob, country, area, bio FROM users WHERE id IN ($friendIDS);";
             $result = mysqli_query ($conn, $sql);
             //echo $sql;
 
@@ -51,6 +51,7 @@ if (isset ($_GET['userID'])) {
                     $count = mysqli_num_rows ($result);
                     // success
                     $response["success"] = 1;
+                    $$response["count"] = "$count";
                     $response["message"] = "$count friends found";
                     $response["friends"] = array ();
 

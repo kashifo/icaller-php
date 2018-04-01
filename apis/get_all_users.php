@@ -5,7 +5,7 @@ require_once '../include/DB_Connect.php';
 $db = new Db_Connect();
 $conn = $db->connect ();
 
-$result = mysqli_query ($conn, "SELECT * FROM users");
+$result = mysqli_query ($conn, "SELECT  id, name, gender, dob, country, area, bio FROM users");
 
 if (!empty ($result)) {
     // check for empty result

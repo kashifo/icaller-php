@@ -8,7 +8,7 @@ if (isset ($_GET['userID'])) {
     $conn = $db->connect ();
     $id = $_GET['userID'];
 
-    $result = mysqli_query ($conn, "SELECT * FROM users WHERE id = $id");
+    $result = mysqli_query ($conn, "SELECT id, name, gender, dob, country, area, bio FROM users WHERE id = $id");
 
     if (!empty ($result)) {
         // check for empty result

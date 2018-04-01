@@ -8,7 +8,7 @@ $db = new Db_Connect();
 $conn = $db->connect ();
 
 $userID = $_GET['userID'];
-$sql = "SELECT * from users WHERE id = ( SELECT actionUser FROM friends WHERE ( userOne=$userID  OR userTwo=$userID ) AND status = 0 AND actionUser != $userID);";
+$sql = "SELECT id, name, gender, dob, country, area, bio from users WHERE id = ( SELECT actionUser FROM friends WHERE ( userOne=$userID  OR userTwo=$userID ) AND status = 0 AND actionUser != $userID);";
 $result = mysqli_query ($conn, $sql);
 
 
@@ -19,7 +19,8 @@ if (!empty ($result)) {
         $count = mysqli_num_rows($result);
         // success
         $response["success"] = 1;
-        $response["requests"] = "$count";
+        $$response["count"] = "$count";
+        $$response["message"] = "$count friends requests";
         $response["users"] = array ();
 
         while ($row = mysqli_fetch_assoc ($result)) {
